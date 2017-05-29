@@ -1,0 +1,27 @@
+#calcultes whether someone is approved for a loan
+
+#the person must earn at least $30000 per year to qualify
+#and have worked there for at least 2 years
+
+
+
+#global constants for min salary and min years
+
+MIN_SALARY = 30000.0
+MIN_YEARS = 2
+
+def main():
+    salary = float(input('Enter your annual salary: '))
+    years = int(input('Enter years on the job: '))
+
+    if salary >= MIN_SALARY:
+        if years >= MIN_YEARS:
+            print('You get the loan. Congrats!')
+
+        else:
+            print('Im sorry. You havent worked here long enough.')
+
+    else:
+            print('You no makey enough moneys.')
+
+main()
