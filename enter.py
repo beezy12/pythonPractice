@@ -1,6 +1,6 @@
 
 
-print 'enter name: '
-name = raw_input()
+print ('enter name: ')
+name = input()
 
-print 'your name is ' + name
+print ('your name is ' + name)
