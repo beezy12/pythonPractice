@@ -1,6 +1,7 @@
 import praw
 import config
 import time
+import os
 
 
 def botLogin():
@@ -26,6 +27,9 @@ def runBot(reddit, comments_replied_to):
             print('replied to comment: ' + comment.id)
 
             comments_replied_to.append(comment.id)
+
+            with open('comments_replied_to.txt', 'a') as file:
+                file.write(comment.id + '\n')
     
     print('sleeping for 10 seconds')
     time.sleep(10)
@@ -33,12 +37,15 @@ def runBot(reddit, comments_replied_to):
 
 
 def get_saved_comments():
-    if not os.path.isfile('comments_replied.txt'):
+    # this means if the file doesn't exist, make a new list
+    if not os.path.isfile('comments_replied_to.txt'):
+        comments_replied_to = []
+    else:
     # the 'r' here means 'read'
-    	with open('comments_replied.txt', 'r') as file:
-	    comments_replied_to = file.read()
+    	with open('comments_replied_to.txt', 'r') as file:
+            comments_replied_to = file.read()
 	    # the split here adds each comment as a new element in the list
-	    comments_replied_to = comment_replied_to.split('\n')
+            comments_replied_to = comment_replied_to.split('\n')
 
     return comments_replied_to
 
@@ -48,7 +55,7 @@ reddit = botLogin()
 
 #print(reddit)
 
-#comments_replied_to = []
+# moved this: comments_replied_to = []
 comments_replied_to = get_saved_comments()
 print(comments_replied_to)
 
