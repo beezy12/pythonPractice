@@ -26,17 +26,21 @@ board = []
 for x in range(0, 3):
     board.append('[ ]' * 3)
 
-def makeboard(list):
+
+rowNum = 0
+def makeboard(board):
 #    for colNum, colBox in enumerate(list, start = 1):
 #        print(str(colNum) + '  ' + str(colNum))
     print ('    1     2     3')
-    for rowNum, rowBox in enumerate(list, start = 1):
+    for rowNum, rowBox in enumerate(board, start = 1):
         print(str(rowNum) + ' ' + ' '.join(rowBox))
         print()
+        return rowNum
 
 makeboard(board)
 
 print(len(board))
+print(board[0])
 
 def taketurn(turn):
     print('IT IS ' + turn + '\'S TURN...')
