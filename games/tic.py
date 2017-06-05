@@ -10,7 +10,7 @@ def startingPiece():
 
 startingPiece()
 
-if 
+#if 
 
 board = []
 
