@@ -1,6 +1,6 @@
 
-username = 'beezyTester'
+username = 'dogTester'
 password = 'butnut12'
-client_id = 'vrbunqQrAKdq2Q'
-client_secret = 'iNVAkHwDh7H_R_W9vA_knZb7hmQ'
+client_id = 'aKYA_OGZ058j9Q'
+client_secret = 'RCjMMgTCqidE3l2kN2tC5XO8mjo'
 

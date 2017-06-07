@@ -11,8 +11,22 @@ def botLogin():
                 client_id = config.client_id,
                 client_secret = config.client_secret,
                 user_agent = 'beezyTester:dog comment responder:v0.1')
-    #print('logged in as ' + reddit.user.me())
     return reddit
+
+
+
+def get_saved_comments():
+    if not os.path.isfile('comments_replied_to.txt'):
+        comments_replied_to = []
+    else:
+    	with open('comments_replied_to.txt', 'r') as file:
+            comments_replied_to = file.read()
+	    # so we read each line of the file, and when there's a new line, split creates a list, splitting on each new line
+            comments_replied_to = comments_replied_to.split('\n')
+	    # the filter here filters out the first argument from the second argument (comme...). had to wrap in list to show items because Python3
+            comments_replied_to = list(filter(None, comments_replied_to))
+
+    return comments_replied_to
 
 
 
@@ -20,8 +34,9 @@ def runBot(reddit, comments_replied_to):
     print('getting 25 comments')
 
 
-    for comment in reddit.subreddit('test').comments(limit=25):
-        if "dog" in comment.body and comment.id not in comments_replied_to and not comment.author == reddit.user.me():
+    for comment in reddit.subreddit('test').comments(limit=15):
+	    # BUG: not replying to comments when the user is me  ***********
+        if "dog" in comment.body and comment.id not in comments_replied_to and comment.author != reddit.user.me():
             print('Found a doggy')
             comment.reply('I like degs too')
             print('replied to comment: ' + comment.id)
@@ -36,26 +51,9 @@ def runBot(reddit, comments_replied_to):
 
 
 
-def get_saved_comments():
-    # this means if the file doesn't exist, make a new list
-    if not os.path.isfile('comments_replied_to.txt'):
-        comments_replied_to = []
-    else:
-    # the 'r' here means 'read'
-    	with open('comments_replied_to.txt', 'r') as file:
-            comments_replied_to = file.read()
-	    # the split here adds each comment as a new element in the list
-            comments_replied_to = comment_replied_to.split('\n')
-
-    return comments_replied_to
-
-
 
 reddit = botLogin()
 
-#print(reddit)
-
-# moved this: comments_replied_to = []
 comments_replied_to = get_saved_comments()
 print(comments_replied_to)
 
