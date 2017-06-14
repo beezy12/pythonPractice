@@ -8,16 +8,21 @@ stuff = {
     'arrow': 12
 }
 
-print()
-print('Inventory: ')
 
-count = 0
-for k, v in stuff.items():
-    print(v, k)
-    count = count + v
+def countInventory(inventory):
+    print()
+    print('Inventory: ')
 
-print()
-print('total: ' + str(count))
-print()
+    count = 0
+    for k, v in inventory.items():
+        print(v)
+        print(v, k)
+        count = count + v
+
+    print()
+    print('total: ' + str(count))
+    print()
+
+countInventory(stuff)
 
     
