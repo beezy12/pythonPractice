@@ -2,6 +2,12 @@
 # it then adds the dragonsloot, which is a list of strings, to it
 # so this is adding a list of items to a dictionary of items
 
+'''
+this is how you write
+multiline comments
+'''
+
+
 stuff = {
     'rope': 1, 
     'torch': 6, 
@@ -25,8 +31,6 @@ def countInventory(inventory):
     print()
     print('total: ' + str(count))
     print()
-
-    return count
 
 
 def addToInventory(inventory, dragons):
