@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+# very good tutorial on this here: https://praw.readthedocs.io/en/latest/tutorials/comments.html
+
+
+import praw
+import time
+
+def authenticate():
+    user_agent = ("karmabot by /u/botter_one")
+    reddit = praw.Reddit('topBot', user_agent=user_agent)
+    print('logged in as: {}'.format(reddit.user.me()))
+    return reddit
+
+
+def main():
+    reddit = authenticate()
+    subreddit = reddit.subreddit('askreddit')
+    print(subreddit.description)
+    while True:
+        run_bot(reddit)
+
+
+def run_bot(reddit):
+    submission = reddit.submission(url='https://www.reddit.com/r/funny/comments/6ioyus/megapunching_your_sparring_partner_through_the/')
+     
+    submission.comments.replace_more(limit=0)
+    for topComment in submission.comments.list():
+        print(topComment.body)
+        print('*************************')
+
+    time.sleep(12)
+
+print('prior to import: {}'.format(__name__)) 
+
+if __name__ == '__main__':
+    main()

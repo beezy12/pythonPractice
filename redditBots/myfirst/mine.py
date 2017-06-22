@@ -25,11 +25,14 @@ def main():
 
 
 def run_bot(reddit):
-    for comment in reddit.subreddit('learnpython').comments(limit=25):
-        print(comment.author)
+    for comment in reddit.subreddit('askreddit').comments(limit=25):
+        print(comment.body)
 
     print('sleeping for 10 seconds')
     time.sleep(10)
+
+
+
 
 print('prior to import: {}'.format(__name__)) 
 
