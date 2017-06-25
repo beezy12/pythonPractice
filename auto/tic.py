@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 
 theBoard = {
         'top-L': ' ', 'top-M': ' ', 'top-R': ' ',
