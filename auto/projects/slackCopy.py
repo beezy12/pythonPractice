@@ -8,11 +8,13 @@ text = pyperclip.paste()
 words = text.split('\n')
 lines = list(filter(None, words))  #filters out blank items in LIST
 
+# this is called list comprehension
 #lines[:] = [x for x in lines if ]
 
-test = 'this is a [] test'
-searchObj = re.search(r'[]', test)
-print(searchObj.group(0))
+searchObj = re.compile(r'[')
+test = searchObj.search('this is a [] test')
+print('found this: ' + test.group())
+
 
 #for i in range(len(lines)):
 #    print(lines[i])
