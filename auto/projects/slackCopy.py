@@ -9,6 +9,7 @@ words = text.split('\n')
 lines = list(filter(None, words))  #filters out blank items in LIST
 
 # this is called list comprehension
+# list comprehension example: squares = [x**2 for x in range(1, 11)
 #lines[:] = [x for x in lines if ]
 
 searchObj = re.compile(r'[')
