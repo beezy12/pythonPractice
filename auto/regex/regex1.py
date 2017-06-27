@@ -13,9 +13,7 @@ phoneNumber = re.compile(r'\d{3}-\d{3}-\d{4}')
 # mo is the generic term for match object
 mo = phoneNumber.search('my phone number is 615-862-5309')
 
-
-
-
-# use the group() method to show what was found
 # use the group() method to show what was found
 print('the number that was found was ' + mo.group())
+
+
