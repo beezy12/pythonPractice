@@ -12,7 +12,7 @@ print(mo)
 
 
 
-# this one has groups
+# this one has groups, so it returns a tuple
 returningTup = re.compile(r'(\d{3})-(\d{3})-(\d{4})')
 print(returningTup.findall('cell: 615-666-4433  home: 615-867-5309'))
 
