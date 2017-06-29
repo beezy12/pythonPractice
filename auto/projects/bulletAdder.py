@@ -12,7 +12,7 @@ text = pyperclip.paste()
 # at the end, this gives us a LIST with each item being a * with text after it
 lines = text.split('\n')
 for i in range(len(lines)):
-    lines[i] = '* ' + lines[i]
+    lines[i] = '- ' + lines[i]
 
 # next step is to take that LIST and join all the items back into a new paragraph...
 # by joining on the \n

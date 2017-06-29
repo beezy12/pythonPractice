@@ -19,3 +19,12 @@ print(mo1.group())
 
 
 
+
+
+# must match EXACTLY 3 ha's
+
+laugh = re.compile(r'(ha){3}')
+
+molaugh = laugh.search('hahaha')
+
+print(molaugh.group())
