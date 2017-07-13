@@ -1,19 +1,23 @@
 
 theBoard = {
-        'top-L': ' ', 'top-M': ' ', 'top-R': ' ',
-        'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',
-        'low-L': ' ', 'low-M': ' ', 'low-R': ' '
+        'top-l': ' ', 'top-m': ' ', 'top-r': ' ',
+        'mid-l': ' ', 'mid-m': ' ', 'mid-r': ' ',
+        'low-l': ' ', 'low-m': ' ', 'low-r': ' '
 }
 
 
 def printBoard(board):
-    print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])
+    print(board['top-l'] + '|' + board['top-m'] + '|' + board['top-r'])
     print('-+-+-')
-    print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])
+    print(board['mid-l'] + '|' + board['mid-m'] + '|' + board['mid-r'])
     print('-+-+-')
-    print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
+    print(board['low-l'] + '|' + board['low-m'] + '|' + board['low-r'])
 
-turn = 'X'
+entry = input('enter X or O: ')
+one = entry.upper()
+print('player one entered ' + one)
+
+turn = one
 for i in range(9):
     printBoard(theBoard)
     move = input('its ' + turn + ' turn.....so hurry up: ')

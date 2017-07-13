@@ -43,7 +43,9 @@ def addToInventory(inventory, dragons):
     return inventory
 
 
-
+print('first we have this stuff: ')
+for k in stuff:
+    print(stuff[k])
 
 inv = addToInventory(stuff, dragonsloot)
 
