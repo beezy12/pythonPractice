@@ -25,12 +25,16 @@ def main():
 
 
 def run_bot(reddit):
-    for comment in reddit.subreddit('askreddit').comments(limit=25):
-        print(comment.body)
+    limit = 25
+    print('getting ' + str(limit) + ' comments')
+    print()
+    for comment in reddit.subreddit('depression').comments(limit=limit):
+        if 'die' in comment.body:
+            print('******* Reddit user: ' + str(comment.author))
+            print(comment.body)
 
     print('sleeping for 10 seconds')
     time.sleep(10)
-
 
 
 
