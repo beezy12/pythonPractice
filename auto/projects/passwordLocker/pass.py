@@ -2,6 +2,7 @@
 #! python3
 
 # this program simulates a password storage app
+# enter account name at the command line for the password you want
 # takes a command line argument for the account name
 # and copies the password to the clipboard using pyperclip
 

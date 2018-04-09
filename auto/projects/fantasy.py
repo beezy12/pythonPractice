@@ -19,6 +19,16 @@ stuff = {
 dragonsloot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
 
+def addToInventory(inventory, dragons):
+    for item in range(len(dragons)):
+        if dragons[item] in inventory.keys():
+            inventory[dragons[item]] += 1
+        else:
+            inventory.setdefault(dragons[item], 1)
+
+    return inventory
+
+
 def countInventory(inventory):
     print()
     print('Inventory: ')
@@ -33,14 +43,6 @@ def countInventory(inventory):
     print()
 
 
-def addToInventory(inventory, dragons):
-    for item in range(len(dragons)):
-        if dragons[item] in inventory.keys():
-            inventory[dragons[item]] += 1
-        else:
-            inventory.setdefault(dragons[item], 1)
-
-    return inventory
 
 
 print('first we have this stuff: ')
